@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-TW" dir='ltr'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+<meta content="Liu, Shu-yuan" name="author">
+<meta name="description" content="Victor的私人練功場">
+<meta name="keywords" content="HTML5, CSS3, Flask, Python">
+{% block meta %}{% endblock %}
+<title>{% block title %}{% endblock %}</title>
+<link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/style.css')}}">
+<link rel='stylesheet' type='text/css' media='print' href="{{url_for('static', filename='css/print.css')}}">
+{% block style %}{% endblock %}
+{% block js %}{% endblock %}
+</head>
+
+{% set navigation_bar = [
+    ('/', '首頁', '~'),
+    ('/geo', 'geo實作', '/geo'),
+    ('/template', '404實作', '/template'),
+    ('/env', '環境變數', '/env')
+] -%}
+
+<body>
+    <div id='container'>
+        {% block nav %}
+        <nav>
+            {% for href, title, caption in navigation_bar %}
+            <a href='{{ href|e }}' title='{{ title|e }}'>{{ caption|e }}</a>
+            {% endfor %}
+        </nav>
+        {% endblock %}
+        <header>{% block header %}{% endblock %}</header>
+        <hr>
+        <article>{% block article %}{% endblock %}</article>
+        <footer>
+            {% block footer %}copyleft{% endblock %}<br/>
+        </footer>
+    </div>
+    <div id='controller'>
+        <a href="javascript: history.back()" class="left pill button"><span class="leftarrow icon"></span>Back</a>
+        <a href="/" class="middle primary  pill button"><span class="home icon"></span>Home</a>
+        <a href="#" class="button negative middle" onclick="location.href = 'view-source:' + this.href; return false;"><span class="magnifier icon"></span>view source</a>
+        <a href="javascript: history.forward()" class="right pill button"><span class="rightarrow icon"></span>Forward</a>
+    </div>
+</body>
+</html>

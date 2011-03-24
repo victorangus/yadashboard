@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}yadashboard{% endblock %}
+{% block meta %}<meta name="google-site-verification" content="jssv1E2ZRVs_HaX5DfdbNOZ783UH1jucvDW7eShvODU" />{% endblock %}
+{% block body %}
+    {% block header %}歡迎{% endblock %}
+
+    {% block article %}
+        <h1>吱喳</h1>
+        <p>這個傢伙很可憐，只能靠人工刻出code。</p>
+
+        <h1>issue</h1>
+        <ul>
+            <li>layout is still incurrect.</li>
+            <li>中文字套用web font目前的方案都不理想，期望<a href='http://wenq.org/' title='文泉驿網站'>文泉驿</a>快快推出WOFF版本。</li>
+            <li>Opera 11.10 beta無法正確處理li編號。（不打算修正）</li>
+            <li>下面的遙控器不知道為什麼消不掉間距。</li>
+        </ul>
+
+        <h1>todo</h1>
+        <ul>
+            <li>implement mobile browser auto detect function. Use wurfl.</li>
+        </ul>
+
+        <h1>oops</h1>
+        <p>browser compatibility有很大的問題！不過這是正常的！</p>
+    {% endblock %}
+{% endblock %}

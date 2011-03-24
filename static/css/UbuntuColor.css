@@ -1,0 +1,10 @@
+body {
+    color: white;
+    background: #2d0922;
+}
+#container{
+    background-color: rgba(100%, 100%, 100%, 0.1);
+}
+a{
+    color:yellow;
+}

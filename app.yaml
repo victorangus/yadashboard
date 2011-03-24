@@ -1,0 +1,17 @@
+application: yadashboard
+version: 1
+runtime: python
+api_version: 1
+
+
+handlers:
+- url: /(robots\.txt|favicon\.ico|sitemap\.xml)
+  static_files: static/\1
+  upload: static/(.*)
+
+- url: /static
+  static_dir: static
+  
+- url: /.*
+  script: yadashboard.py
+  
